@@ -49,7 +49,7 @@ public class OneToOneTest {
         // 외래 키의 주인이 아닌 User 에서 Food 를 저장해보겠습니다.
         User user = new User();
         user.setName("Robbie");
-        user.setFood(food);
+//        user.setFood(food);
 
         userRepository.save(user);
         foodRepository.save(food);
@@ -69,7 +69,7 @@ public class OneToOneTest {
         // 외래 키(연관 관계) 설정 food.setUser(this); 추가
         User user = new User();
         user.setName("Robbie");
-        user.addFood(food); // food에게 자신을 넘겨주는 것임
+//        user.addFood(food); // food에게 자신을 넘겨주는 것임
 
         userRepository.save(user);
         foodRepository.save(food);
@@ -111,9 +111,9 @@ public class OneToOneTest {
 
         // 해당 고객이 주문한 음식 정보 조회
         // 외래키의 주인은 아니지만, 양방향이기 때문에 외래키를 조회할 수는 있다!
-        Food food = user.getFood();
-        System.out.println("food.getName() = " + food.getName());
-        System.out.println("food.getPrice() = " + food.getPrice());
+////        Food food = user.getFood();
+//        System.out.println("food.getName() = " + food.getName());
+//        System.out.println("food.getPrice() = " + food.getPrice());
     }
 
 }
