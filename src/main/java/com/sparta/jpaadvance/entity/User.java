@@ -17,11 +17,12 @@ public class User {
     private Long id;
     private String name;
 
-//    @ManyToMany(mappedBy = "userList")
-//    private List<Food> foodList = new ArrayList<>();
-//
-//    public void addFoodList(Food food) {
-//        this.foodList.add(food);
-//        food.getUserList().add(this); // 외래 키(연관 관계) 설정
-//    }
+    // 양방향이라 아래 추가
+    @ManyToMany(mappedBy = "userList")
+    private List<Food> foodList = new ArrayList<>();
+
+    public void addFoodList(Food food) {
+        this.foodList.add(food);
+        food.getUserList().add(this); // 외래 키(연관 관계) 설정
+    }
 }

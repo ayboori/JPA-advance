@@ -73,8 +73,8 @@ public class OneToManyTest {
         // 외래 키의 주인이 아닌 User 에서 Food 를 저장해보겠습니다.
         User user = new User();
         user.setName("Robbie");
-        user.getFoodList().add(food);
-        user.getFoodList().add(food2);
+//        user.getFoodList().add(food);
+//        user.getFoodList().add(food2);
 
         userRepository.save(user);
         foodRepository.save(food);
@@ -100,8 +100,8 @@ public class OneToManyTest {
         // 외래 키(연관 관계) 설정을 위해 Food 에서 userList 를 호출해 user 객체 자신을 add 합니다.
         User user = new User();
         user.setName("Robbie");
-        user.addFoodList(food);
-        user.addFoodList(food2);
+//        user.addFoodList(food);
+//        user.addFoodList(food2);
 
 
         userRepository.save(user);
@@ -140,11 +140,11 @@ public class OneToManyTest {
         // User 를 통해 food 의 정보 조회
         System.out.println("user.getName() = " + user.getName());
 
-        List<Food> foodList = user.getFoodList();
-        for (Food f : foodList) {
-            System.out.println("f.getName() = " + f.getName());
-            System.out.println("f.getPrice() = " + f.getPrice());
-        }
+//        List<Food> foodList = user.getFoodList();
+//        for (Food f : foodList) {
+//            System.out.println("f.getName() = " + f.getName());
+//            System.out.println("f.getPrice() = " + f.getPrice());
+//        }
 
         // 외래 키의 주인이 아닌 User 객체에 Food 의 정보를 넣어주지 않아도 DB 저장에는 문제가 없지만
         // 이처럼 User 를 사용하여 food 의 정보를 조회할 수는 없습니다.
