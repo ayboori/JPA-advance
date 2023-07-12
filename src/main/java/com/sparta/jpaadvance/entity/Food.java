@@ -18,7 +18,7 @@ public class Food {
     private String name;
     private double price;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne
     @JoinColumn(name = "user_id")
     private User user;
 }
